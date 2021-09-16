@@ -703,6 +703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Belt-16
       objectReference: {fileID: 0}
+    - target: {fileID: 5209592363964864648, guid: 8184370e72638ac458a5cc737d373798, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9fe0b1b6ae160e64ca449576d967645e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8184370e72638ac458a5cc737d373798, type: 3}
 --- !u!4 &1799167377 stripped

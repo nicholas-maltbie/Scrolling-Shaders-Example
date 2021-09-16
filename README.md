@@ -1,5 +1,7 @@
 # Scrolling Shaders Example
 
+![Example of boxes being pushed along a conveyer belt from the showcase scene](Examples/imgs/Showcase-Image.png)
+
 This project demonstrates an example of how to use the and modify scrolling shaders through various means within unity.
 
 This shader was developed as part of the Falling Parkour Project here -
@@ -14,6 +16,8 @@ your own work. If you see an error in the project or have any suggestions, write
 happy include any suggestions or ideas into the project. 
 
 # Examples
+
+![Example fo items being pushed along by conveyer belt](Examples/imgs/conveyer-belt-anim.gif)
 
 In the folder `Assets/ScrollingShader/Scenes`, there are various example scenes showing how different pars of the
 project and example work. Here is a brief summary of each step:
