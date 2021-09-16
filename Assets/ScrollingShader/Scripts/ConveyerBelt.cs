@@ -18,9 +18,6 @@ namespace nickmaltbie.ScrollingShader
     public class ConveyerBelt : MonoBehaviour
     {
         [SerializeField]
-        private bool avoidTransferMomentum;
-
-        [SerializeField]
         private float velocity;
 
         [SerializeField]
