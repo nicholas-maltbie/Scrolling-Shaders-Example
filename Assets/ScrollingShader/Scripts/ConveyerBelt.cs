@@ -56,6 +56,22 @@ namespace nickmaltbie.ScrollingShader
             return transform.forward;
         }
 
+        private Vector3 position;
+        private Rigidbody body;
+
+        public void Start()
+        {
+            this.position = transform.position;
+            this.body = GetComponent<Rigidbody>();
+        }
+
+        public void FixedUpdate()
+        {
+            Vector3 movement = velocity * GetDirection() * Time.deltaTime;
+            body.MovePosition(this.position + movement);
+            this.transform.position = this.position;
+        }
+
         /// <summary>
         /// When colliding with an object, if it has a rigidbody and is not kinematic, push it forward by the speed of
         /// the conveyer belt.
@@ -63,11 +79,11 @@ namespace nickmaltbie.ScrollingShader
         /// <param name="other">Collision event between the objects.</param>
         public void OnCollisionStay(Collision other)
         {
-            if (other.rigidbody != null && !other.rigidbody.isKinematic)
-            {
-                Vector3 movement = velocity * GetDirection() * Time.deltaTime;
-                other.rigidbody.MovePosition(other.transform.position + movement);
-            }
+            // if (other.rigidbody != null && !other.rigidbody.isKinematic)
+            // {
+            //     Vector3 movement = velocity * GetDirection() * Time.deltaTime;
+            //     other.rigidbody.MovePosition(other.transform.position + movement);
+            // }
         }
     }
 }
