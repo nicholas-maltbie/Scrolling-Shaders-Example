@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace nickmaltbie.ScrollingShader
 {
+    /// <summary>
+    /// Relative direction to face from a local transform.
+    /// </summary>
     public enum RelativeDirection
     {
         Up,
@@ -13,16 +16,26 @@ namespace nickmaltbie.ScrollingShader
     }
 
     /// <summary>
-    /// Conveyer belt that has a uniform direction and speed
+    /// Conveyer belt that has a uniform direction and speed and will push objects that collide with it.
     /// </summary>
     public class ConveyerBelt : MonoBehaviour
     {
+        /// <summary>
+        /// Velocity of the conveyer belt in meters per second.
+        /// </summary>
         [SerializeField]
         private float velocity;
 
+        /// <summary>
+        /// Direction that the conveyer belt pushes objects.
+        /// </summary>
         [SerializeField]
         private RelativeDirection direction = RelativeDirection.Down;
 
+        /// <summary>
+        /// Get the world space direction that the conveyer belt will push objects.
+        /// </summary>
+        /// <returns>The direction in world space of teh conveyer belt, will be 1 unit long.</returns>
         public Vector3 GetDirection()
         {
             switch (this.direction)
@@ -43,13 +56,17 @@ namespace nickmaltbie.ScrollingShader
             return transform.forward;
         }
 
+        /// <summary>
+        /// When colliding with an object, if it has a rigidbody and is not kinematic, push it forward by the speed of
+        /// the conveyer belt.
+        /// </summary>
+        /// <param name="other">Collision event between the objects.</param>
         public void OnCollisionStay(Collision other)
         {
             if (other.rigidbody != null && !other.rigidbody.isKinematic)
             {
                 Vector3 movement = velocity * GetDirection() * Time.deltaTime;
-                other.gameObject.GetComponent<Rigidbody>().MovePosition(
-                    other.gameObject.transform.position + movement);
+                other.rigidbody.MovePosition(other.transform.position + movement);
             }
         }
     }
