@@ -66,8 +66,7 @@ namespace nickmaltbie.ScrollingShader
             if (other.rigidbody != null && !other.rigidbody.isKinematic)
             {
                 Vector3 movement = velocity * GetDirection() * Time.deltaTime;
-                other.rigidbody.MovePosition(
-                    other.gameObject.transform.position + movement);
+                other.rigidbody.MovePosition(other.transform.position + movement);
             }
         }
     }
