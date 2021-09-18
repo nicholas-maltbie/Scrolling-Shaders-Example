@@ -13,9 +13,24 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1437204830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524748107473609151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50158cc6715b9f24da32f8af21d4f23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 1
+  direction: 1
+  beltMode: 0
 --- !u!1001 &452624347197439493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30,6 +45,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8184370e72638ac458a5cc737d373798, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8184370e72638ac458a5cc737d373798, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8184370e72638ac458a5cc737d373798, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,9 +90,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 576447117238848629, guid: 8184370e72638ac458a5cc737d373798, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 576447117238848629, guid: 8184370e72638ac458a5cc737d373798, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c7638bc50e342ec44a9efccdcbef91c4, type: 2}
     - target: {fileID: 919132149155446097, guid: 8184370e72638ac458a5cc737d373798, type: 3}
       propertyPath: m_Name
-      value: Belt-16 Variant
+      value: Belt-16
       objectReference: {fileID: 0}
     - target: {fileID: 5209592363964864648, guid: 8184370e72638ac458a5cc737d373798, type: 3}
       propertyPath: m_Materials.Array.data[0]
